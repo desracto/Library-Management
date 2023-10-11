@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="rootPane" prefHeight="503.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2fx2.LibraryUIChangeItem_Controller">
+   <children>
+      <Text layoutX="179.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change an Item" textAlignment="CENTER" wrappingWidth="358.314453125">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Button layoutX="529.0" layoutY="425.0" mnemonicParsing="false" onAction="#BackToViewMenu" prefHeight="56.0" prefWidth="173.0" text="GO BACK TO MAIN MENU" />
+      <ListView fx:id="LibraryViewPane" layoutX="27.0" layoutY="128.0" prefHeight="353.0" prefWidth="492.0" />
+      <Button layoutX="529.0" layoutY="357.0" mnemonicParsing="false" onAction="#changeItem" prefHeight="56.0" prefWidth="173.0" text="CHANGE ITEM" />
+   </children>
+</AnchorPane>

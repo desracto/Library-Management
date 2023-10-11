@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="rootPane" prefHeight="503.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2fx2.LibraryUI_ChangeItem_Journal_Controller">
+   <children>
+      <Text layoutX="189.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Changing Journal" textAlignment="CENTER" wrappingWidth="358.314453125">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="74.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="70.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="80.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Journal Number">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="name" layoutX="189.0" layoutY="142.0" prefHeight="30.0" prefWidth="341.0" />
+      <TextField fx:id="author" layoutX="189.0" layoutY="193.0" prefHeight="30.0" prefWidth="341.0" />
+      <TextField fx:id="year" layoutX="189.0" layoutY="259.0" prefHeight="30.0" prefWidth="149.0" />
+      <TextField fx:id="journal_number" layoutX="189.0" layoutY="320.0" prefHeight="30.0" prefWidth="149.0" />
+      <Button layoutX="58.0" layoutY="384.0" mnemonicParsing="false" onAction="#confirmChange" prefHeight="56.0" prefWidth="173.0" text="CONFIRM CHANGE" />
+      <Button layoutX="530.0" layoutY="433.0" mnemonicParsing="false" onAction="#BackToViewMenu" prefHeight="56.0" prefWidth="173.0" text="GO BACK TO MENU" />
+   </children>
+</AnchorPane>

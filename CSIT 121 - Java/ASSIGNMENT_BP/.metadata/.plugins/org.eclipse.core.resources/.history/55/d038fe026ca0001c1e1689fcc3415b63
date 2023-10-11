@@ -1,0 +1,300 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+	/*
+	 *  Authors: Mohammed Ejazzur(7305849) and Abdul Hadi (7330066)
+	 */
+
+public class Library {
+
+	ArrayList <Item> LibraryItems = new ArrayList<>();
+
+	public static void main(String[] args) throws Exception {
+		
+//		Library temp = new Library();
+//		temp.LibraryItems.add(new Book("Hello", "ME", 2020, 2323232));
+//		
+//		System.out.println(temp.LibraryItems.size());
+		
+		Library temp = new Library();
+			
+		startProgram(temp);
+		
+	}	
+	
+	public static void startProgram(Library temp) {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Welcome to UOWD Library!");
+		System.out.println("These are the current items within our library: ");
+
+		int choice = 100; // so the program doesnt auto end
+		while (choice != 0) { 
+
+		
+			System.out.println("*******************LIBRARY********************");
+			
+			int index_display = 0;
+			
+			if(temp.LibraryItems.size() == 0) {
+				System.out.println("There is nothing in the library!");
+			}
+			else 
+			{
+				for(int i = 0; i < temp.LibraryItems.size(); i++) {
+					System.out.println(index_display + " " + temp.LibraryItems.get(i).displayItem());
+					index_display += 1;
+				}
+			}
+			
+			System.out.println("*******************LIBRARY********************");
+		
+			System.out.println("\n What would you like to do?");
+			System.out.println("1. Add an item to the library \n" +
+							   "2. Remove an item to the library \n" +
+							   "3. Change information of an item in the library \n" +
+							   "4. Display items in the library \n " + 
+						   	   "0. End Program");
+			
+			choice = in.nextInt();
+			
+			switch (choice) {
+				case 1: {
+					// add selected - DONE 
+					
+					addItem(temp);
+					break;
+				}
+				case 2: {
+					// remove selected
+				
+					try {
+						removeItem(temp);
+					} catch (Exception e) {
+						System.out.println(e + "\n");
+					}
+					break;
+				}
+				case 3: {
+					// change selected
+				
+					// changeItem(int index);
+					break;
+				}
+				case 4: {
+					// display selected
+					
+					// displayArray();
+					break;
+				}
+			}// END OF SWITCH CASE
+		}
+		
+	}
+	
+	public static void addItem(Library temp) {
+		// Adding an Item(type) to the arrayList
+		
+		System.out.println("What is the type of item you are adding?");
+		System.out.println("1. Book \n" +
+						   "2. Journal \n" + 
+						   "3. Media");
+		
+		Scanner in = new Scanner(System.in);
+		int type_choice = in.nextInt();
+		
+		switch(type_choice) {
+			
+			case 1 : {
+				// book selected
+				System.out.println("Selected: Book");
+				System.out.println("Please enter the Book Name, Author, Year of publication and ISBN");
+				
+				System.out.println("Book Name: ");
+				String buffer = in.nextLine(); // buffer 
+				String item_name = in.nextLine();
+				
+				System.out.println("Author: ");
+				String author = in.nextLine();
+				
+				System.out.println("Year of Publication");
+				int year = in.nextInt();
+				
+				System.out.println("ISBN");
+				int ISBN = in.nextInt();
+				
+				try {
+					Book book1 = new Book(item_name, author, year, ISBN); // creating a new book
+					
+					temp.LibraryItems.add(book1); // adding book1 to variable
+					
+					System.out.println("Added: " + book1.displayItem());
+					System.out.println("**************************************************");
+					
+				} catch (Exception e) {
+					System.out.println("Error: " + e);
+				}
+
+				break;
+			}// end of book
+			case 2: {
+				// journal selected
+				System.out.println("Selected: Journal");
+				System.out.println("Please enter the Journal name, Author, Year of Publication and Volume Number");
+				
+				System.out.println("Journal Name: ");
+				String buffer = in.nextLine(); // buffer 
+				String item_name = in.nextLine();
+				
+				System.out.println("Author: ");
+				String author = in.nextLine();
+				
+				System.out.println("Year of Publication");
+				int year = in.nextInt();
+				
+				System.out.println("Volume Number");
+				int vol_num = in.nextInt();
+				
+				try {
+					Journal j1 = new Journal (item_name, author, year, vol_num);
+					
+					temp.LibraryItems.add(j1);
+					
+					System.out.println("Added: " + j1.displayItem());
+					System.out.println("**************************************");
+				}catch (Exception e){
+					System.out.println("Error: " + e);
+				}
+
+				break;
+			}// end of journal
+			case 3: {
+				// media selected
+				System.out.println("Selected: Media");
+				System.out.println("Please enter the Media name, Author, Year of Publication and Type");
+				
+				System.out.println("Media Name: ");
+				String buffer = in.nextLine(); // buffer 
+				String item_name = in.nextLine();
+				
+				System.out.println("Author: ");
+				String author = in.nextLine();
+				
+				System.out.println("Year of Publication");
+				int year = in.nextInt();
+				
+				System.out.println("Media Type");
+				buffer = in.nextLine(); // buffer 
+				String type = in.nextLine();
+				
+				try {
+					Media m1 = new Media (item_name, author, year, type);
+					
+					temp.LibraryItems.add(m1);
+					
+					System.out.println("Added: " + m1.displayItem());
+					System.out.println("**************************************");
+					
+				}catch (Exception e){
+					System.out.println("Error: " + e);
+				}
+
+				break;
+			}// end of media
+		}// END OF SWTICH CASE
+	}// end of addItem();
+	
+	public static void removeItem(Library temp) throws Exception {
+		
+		if (temp.LibraryItems.size() == 0) {
+			throw new Exception("There is nothing in the library");
+		}
+		else 
+		{
+			Scanner in = new Scanner(System.in);
+			
+			System.out.println("What would you like to remove?");
+			int index = in.nextInt();
+			
+			System.out.println("Selected: Remove Item");
+			
+			int choice = 5;
+			while (choice != 2 || choice == 1) {
+				System.out.println("Index Choosen: " + index);
+				System.out.println("Enter 1 to Confirm. Enter 2 to go back");
+				
+				choice = in.nextInt();
+				
+				switch(choice) {
+					case 1: {
+						// confirmed
+						System.out.println("Removing: " + temp.LibraryItems.get(index).displayItem());
+						temp.LibraryItems.remove(index);
+						choice = 2;
+						break;
+					}
+					case 2: {
+						System.out.println("Going back...");
+						break;
+					}
+					default: {
+						System.out.println("INVALID CHOICE");
+						break;
+					}
+				}
+			}// end of while
+		}// end of else
+		
+	}// end of removeItem(int index, Library temp);
+	
+	public static void changeItem(Library temp) throws Exception {
+		
+		if (temp.LibraryItems.size() == 0) {
+			throw new Exception ("There is nothing in the library.");
+		}
+		else
+		{
+			Scanner in = new Scanner(System.in);
+			
+			System.out.println("What do you want to change?");
+			int index = in.nextInt();
+			
+			System.out.println("Selected: " + temp.LibraryItems.get(index).getName());
+			
+			int choice = 20;
+			while (choice != 0) {
+				
+				System.out.println("What do you want to change?");
+				System.out.println("1. Name \n" +
+								   "2. Author \n" + 
+								   "3. Year of Publication \n");
+				
+				if (temp.LibraryItems.get(index) instanceof Book) {
+					System.out.println("4. ISBN");
+				}
+				else if (temp.LibraryItems.get(index) instanceof Journal) {
+					System.out.println("4. Journal Number");
+				}
+				else if (temp.LibraryItems.get(index) instanceof Media) {
+					System.out.println("4. Media Type");
+				}
+				
+				choice = in.nextInt();
+				
+				switch (choice) {
+					case 1: {
+						// name selected
+						System.out.println("What is the new name?");
+					}
+				}
+				
+			}
+			
+			
+ 		}
+		
+	}
+	
+	
+	
+}

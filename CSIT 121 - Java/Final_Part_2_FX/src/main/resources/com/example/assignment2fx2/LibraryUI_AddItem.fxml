@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefHeight="503.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2fx2.LibraryUIAddItem">
+   <children>
+      <AnchorPane fx:id="addMenuRootPane" prefHeight="503.0" prefWidth="716.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="523.0" layoutY="445.0" mnemonicParsing="false" onAction="#goBacktoMainMenu" prefHeight="44.0" prefWidth="179.0" text="GO BACK TO MAIN MENU" />
+            <Text layoutX="178.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What would you like to add?" wrappingWidth="370.13671875">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Text>
+            <Button layoutX="269.0" layoutY="160.0" mnemonicParsing="false" onAction="#addBook" prefHeight="52.0" prefWidth="179.0" text="Book" />
+            <Button layoutX="269.0" layoutY="252.0" mnemonicParsing="false" onAction="#addMedia" prefHeight="52.0" prefWidth="179.0" text="Media" />
+            <Button layoutX="269.0" layoutY="348.0" mnemonicParsing="false" onAction="#addJournal" prefHeight="52.0" prefWidth="179.0" text="Journal" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
